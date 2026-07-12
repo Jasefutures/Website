@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Ebook — Orderflow for NQ Traders</title>
+<meta name="description" content="Free ebook: orderflow for NQ / MNQ traders, from zero. Learn to read the tape before you pay for another prop-firm eval. Delivered instantly by email.">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .freebie { background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 2.25rem 1.5rem; text-align: center; }
+  .freebie .kicker { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--cta); font-weight: 650; margin-bottom: 0.6rem; }
+  .freebie h1 { font-size: 1.45rem; margin: 0 0 0.6rem; line-height: 1.35; }
+  .freebie > p { color: var(--muted); font-size: 0.95rem; margin: 0 auto 1.5rem; max-width: 30rem; }
+  .inside { text-align: left; max-width: 26rem; margin: 0 auto 1.75rem; color: var(--muted); font-size: 0.9rem; }
+  .inside li { margin: 0.35rem 0; }
+  .inside li::marker { color: var(--cta); }
+  .kit-form { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; max-width: 26rem; margin: 0 auto; }
+  .kit-form input[type="email"] {
+    flex: 1; min-width: 200px; padding: 0.75rem 0.9rem; background: var(--surface2);
+    border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 1rem;
+  }
+  .kit-form input[type="email"]:focus { outline: none; border-color: var(--cta); }
+  .kit-form button {
+    padding: 0.75rem 1.4rem; background: var(--cta); color: var(--cta-text);
+    border: none; border-radius: 8px; font-size: 1rem; font-weight: 650; cursor: pointer;
+  }
+  .kit-form button:hover { filter: brightness(1.08); }
+  .fine { margin-top: 0.8rem; font-size: 0.75rem; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="brand">NQ Toolkit</a>
+    <div class="nav-links">
+      <a href="../calculator/index.html">Calculator</a>
+      <a href="../drawdown/index.html">Drawdown</a>
+      <a href="index.html" class="nav-cta">Free Ebook</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="freebie">
+    <div class="kicker">Free ebook — sent instantly</div>
+    <!-- Swap the title below if the final ebook title changes. -->
+    <h1>Orderflow for NQ Traders:<br>Read the Tape Before You Pay for Another Eval</h1>
+    <p>Position sizing keeps you alive, but it doesn't give you an edge.
+    This is orderflow from zero — written for MNQ/NQ eval traders, no fluff.</p>
+
+    <ul class="inside">
+      <li>What the DOM and the tape actually show (and what they can't)</li>
+      <li>Delta and footprint charts without the jargon</li>
+      <li>Absorption and exhaustion — the two signals worth learning first</li>
+      <li>One simple orderflow entry model you can test on MNQ</li>
+      <li>How to run it inside prop-firm drawdown rules</li>
+    </ul>
+
+    <!-- ============================================================
+         KIT (ConvertKit) HOOKUP — two options, pick ONE. See README.md.
+
+         OPTION A (recommended, keeps this design):
+         1. In Kit: Grow → Landing Pages & Forms → your form → Embed → HTML.
+         2. In that embed code, find the number in:
+              action="https://app.kit.com/forms/1234567/subscriptions"
+         3. Replace YOUR_FORM_ID in the form below with that number. Done —
+            the form below already uses Kit's required field name
+            (email_address) and posts directly to Kit. Your existing
+            "send the freebie on signup" automation fires as normal.
+         4. Optional: in Kit form settings, set "success" to redirect to
+            your thanks page: https://YOURUSER.github.io/YOURREPO/ebook/thanks.html
+
+         OPTION B (Kit-styled form):
+         Delete the <form> below entirely and paste Kit's JS embed snippet
+         (Embed → Javascript) in its place. Note it won't match this theme.
+         ============================================================ -->
+    <form class="kit-form" action="https://app.kit.com/forms/YOUR_FORM_ID/subscriptions" method="post">
+      <input type="email" name="email_address" aria-label="Email address" placeholder="you@email.com" required>
+      <button type="submit">Send me the ebook</button>
+    </form>
+    <div class="fine">No spam, no course pitch on signup — the ebook and the occasional NQ note. Unsubscribe anytime.</div>
+  </div>
+
+  <div class="card" style="margin-top:1.5rem">
+    <h2>Why give it away?</h2>
+    <p style="color:var(--muted);font-size:0.92rem;margin:0">
+      Because most of what's sold to eval traders is recycled indicator noise.
+      If the free material is good, you'll stick around — that's the whole play, no tricks.
+      Meanwhile the <a href="../calculator/index.html">calculator</a> and the
+      <a href="../drawdown/index.html">drawdown visualizer</a> are free forever, email or not.
+    </p>
+  </div>
+
+  <footer>
+    Nothing on this site is financial advice. Trading futures involves substantial risk of loss.
+  </footer>
+
+</div>
+
+</body>
+</html>

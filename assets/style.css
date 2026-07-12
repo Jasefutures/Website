@@ -1,0 +1,144 @@
+/* NQ Toolkit — shared styles
+   Palette: dark trading-platform theme. Green/red reserved for P&L numbers only.
+   Amber is the ebook CTA color and is used for NOTHING else. */
+:root {
+  --bg: #0b0d10;
+  --surface: #14171c;
+  --surface2: #0d0f13;
+  --border: #262b33;
+  --text: #e8eaed;
+  --muted: #98a2ad;
+  --accent: #3987e5;        /* links, focus, interactive */
+  --cta: #f59e0b;           /* ebook CTA only */
+  --cta-text: #0b0d10;
+  --pos: #22c55e;           /* profit / pass — numbers only */
+  --neg: #ef4444;           /* loss / bust — numbers only */
+  --warn: #eab308;
+  --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text); line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+a { color: var(--accent); }
+
+/* ---------- nav ---------- */
+nav { border-bottom: 1px solid var(--border); }
+.nav-inner {
+  max-width: 720px; margin: 0 auto; padding: 0.9rem 1.25rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.brand { color: var(--text); text-decoration: none; font-weight: 650; letter-spacing: 0.01em; }
+.nav-links { display: flex; gap: 1.1rem; align-items: center; flex-wrap: wrap; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 0.92rem; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-cta {
+  background: var(--cta); color: var(--cta-text) !important; font-weight: 600;
+  padding: 0.35rem 0.8rem; border-radius: 8px;
+}
+.nav-cta:hover { filter: brightness(1.08); }
+
+/* ---------- layout ---------- */
+.wrap { max-width: 720px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+.page-head { text-align: center; margin: 0.5rem 0 2rem; }
+.page-head h1 { font-size: 1.6rem; font-weight: 650; margin: 0 0 0.5rem; }
+.page-head p { color: var(--muted); margin: 0; font-size: 0.97rem; }
+
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;
+}
+.card h2 { font-size: 1.08rem; margin: 0 0 1.1rem; }
+.card h3 { font-size: 0.95rem; margin: 1.25rem 0 0.6rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+
+/* ---------- forms ---------- */
+.field { margin-bottom: 1rem; }
+.field label { display: block; font-size: 0.84rem; color: var(--muted); margin-bottom: 0.35rem; }
+.field input, .field select {
+  width: 100%; padding: 0.6rem 0.75rem; background: var(--surface2);
+  border: 1px solid var(--border); border-radius: 8px; color: var(--text);
+  font-size: 1rem; font-family: var(--mono); font-variant-numeric: tabular-nums;
+}
+.field select { font-family: inherit; }
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+@media (max-width: 520px) { .row3 { grid-template-columns: 1fr 1fr; } }
+.hint { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+
+button.primary {
+  width: 100%; padding: 0.75rem 1rem; border: none; border-radius: 8px;
+  background: var(--accent); color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer;
+}
+button.primary:hover { filter: brightness(1.1); }
+button.ghost {
+  padding: 0.45rem 0.9rem; border: 1px solid var(--border); border-radius: 8px;
+  background: transparent; color: var(--muted); font-size: 0.85rem; cursor: pointer;
+}
+button.ghost:hover { color: var(--text); border-color: var(--muted); }
+
+/* ---------- results ---------- */
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+@media (min-width: 560px) { .stats.cols3 { grid-template-columns: 1fr 1fr 1fr; } }
+.stat { background: var(--surface2); border-radius: 8px; padding: 0.85rem 0.9rem; }
+.stat .label { font-size: 0.72rem; color: var(--muted); margin-bottom: 0.2rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.stat .value {
+  font-size: 1.4rem; font-weight: 650; font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+.stat .sub { font-size: 0.75rem; color: var(--muted); margin-top: 0.15rem; }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.pos { color: var(--pos); }
+.neg { color: var(--neg); }
+.warn-c { color: var(--warn); }
+
+.verdict {
+  border-left: 3px solid var(--border); background: var(--surface2);
+  padding: 0.8rem 1rem; border-radius: 0 8px 8px 0; margin-top: 1.1rem; font-size: 0.93rem;
+}
+.verdict.good { border-left-color: var(--pos); }
+.verdict.mid { border-left-color: var(--warn); }
+.verdict.bad { border-left-color: var(--neg); }
+
+/* ---------- charts ---------- */
+canvas.chart { width: 100%; height: auto; background: var(--surface2); border-radius: 8px; border: 1px solid var(--border); }
+.chart-controls { display: flex; gap: 0.5rem; margin-top: 0.75rem; flex-wrap: wrap; align-items: center; }
+.legend { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.78rem; color: var(--muted); margin-top: 0.6rem; }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 3px; border-radius: 2px; margin-right: 0.4rem; vertical-align: middle; background: var(--muted); }
+.legend .l-equity::before { background: var(--accent); }
+.legend .l-floor-i::before { background: var(--neg); }
+.legend .l-floor-e::before { background: var(--warn); }
+.legend .l-target::before { background: var(--pos); }
+
+/* ---------- ebook CTA blocks ---------- */
+.ebook-cta {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 1.4rem 1.5rem; margin: 1.5rem 0; text-align: center;
+}
+.ebook-cta p { margin: 0 0 0.9rem; color: var(--muted); font-size: 0.95rem; }
+.ebook-cta strong { color: var(--text); }
+.btn-cta {
+  display: inline-block; background: var(--cta); color: var(--cta-text);
+  text-decoration: none; font-weight: 650; padding: 0.7rem 1.5rem; border-radius: 8px;
+}
+.btn-cta:hover { filter: brightness(1.08); }
+
+/* ---------- misc ---------- */
+details.methodology { margin-top: 1.25rem; font-size: 0.88rem; color: var(--muted); }
+details.methodology summary { cursor: pointer; color: var(--muted); }
+details.methodology summary:hover { color: var(--text); }
+details.methodology ul { padding-left: 1.2rem; }
+.trust-line { text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 0.75rem; }
+footer { text-align: center; color: var(--muted); font-size: 0.78rem; margin-top: 2.5rem; line-height: 1.7; }
+.slider { width: 100%; accent-color: var(--accent); }
+.toggle-group { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.toggle-group button {
+  border: none; background: transparent; color: var(--muted); padding: 0.45rem 0.9rem;
+  font-size: 0.85rem; cursor: pointer;
+}
+.toggle-group button.on { background: var(--surface2); color: var(--text); }
+table.spec { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+table.spec td { padding: 0.45rem 0.5rem; border-bottom: 1px solid var(--border); }
+table.spec td:last-child { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; }
